@@ -6,22 +6,21 @@
 /*   By: vmkrtchy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 17:24:24 by vmkrtchy          #+#    #+#             */
-/*   Updated: 2023/02/15 16:07:52 by vmkrtchy         ###   ########.fr       */
+/*   Updated: 2023/02/23 14:56:21 by vmkrtchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 5
+#  define BUFFER_SIZE 42
 # endif
 
 # include <stdlib.h>
 # include <stddef.h>
 # include <limits.h>
 # include <fcntl.h>
-# include <stdio.h>
 # include <unistd.h>
 
 char	*ft_strdup(char *s1);

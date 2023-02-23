@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmkrtchy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/23 14:55:21 by vmkrtchy          #+#    #+#             */
-/*   Updated: 2023/02/23 14:56:24 by vmkrtchy         ###   ########.fr       */
+/*   Created: 2023/02/23 14:55:27 by vmkrtchy          #+#    #+#             */
+/*   Updated: 2023/02/23 14:56:23 by vmkrtchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 int	ft_strchr(char *s, int c)
 {
@@ -34,7 +34,7 @@ void	infinity(int fd, char **str)
 
 	while (1)
 	{
-		read_size = read (fd, start, BUFFER_SIZE);
+		read_size = read(fd, start, BUFFER_SIZE);
 		if (read_size < 0)
 		{
 			free(*str);
@@ -68,30 +68,29 @@ void	f(char **s, char **str, int i)
 char	*get_next_line(int fd)
 {
 	char		*s;
-	static char	*str;
+	static char	*str[OPEN_MAX];
 	int			i;
 
-	infinity(fd, &str);
-	if (str == NULL)
+	infinity(fd, &str[fd]);
+	if (str[fd] == NULL)
 		return (NULL);
-	i = ft_strchr(str, '\n');
+	i = ft_strchr(str[fd], '\n');
 	if (i != -1)
 	{
-		f(&s, &str, i);
+		f(&s, &str[fd], i);
 		return (s);
 	}
 	else
 	{
-		s = ft_strdup (str);
-		free (str);
-		str = NULL;
+		s = ft_strdup(str[fd]);
+		free(str[fd]);
+		str[fd] = NULL;
 		if (*s != 0)
 			return (s);
-		free (s);
+		free(s);
 		return (NULL);
 	}
 }
-
 // #include <fcntl.h>
 // #include <stdio.h>
 // int main()

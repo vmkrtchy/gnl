@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmkrtchy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/23 14:56:14 by vmkrtchy          #+#    #+#             */
-/*   Updated: 2023/02/23 14:56:27 by vmkrtchy         ###   ########.fr       */
+/*   Created: 2023/02/23 14:55:12 by vmkrtchy          #+#    #+#             */
+/*   Updated: 2023/02/23 14:56:25 by vmkrtchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 int	ft_strlen(char *s)
 {
